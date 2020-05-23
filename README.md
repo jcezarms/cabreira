@@ -1,6 +1,6 @@
 <p align="center">
     <a href="#">
-        <img src="./img/logo.svg" height="400px">
+        <img style="cursor: default;" src="./img/logo.svg" height="400px">
     <a/>
 </p>
 
