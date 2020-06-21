@@ -1,6 +1,6 @@
 <p align="center">
     <a href="#">
-        <img style="cursor: default;" src="./img/logo.svg" height="400px">
+        <img style="cursor: default;" src="./logo/logo.svg" height="400px">
     <a/>
 </p>
 
@@ -19,5 +19,5 @@ O Monitor Social de Secas, construído a partir do [Monitor de Secas](http://mon
 
 Já existe um grande foco nos aspectos naturais e sociais dos maiores polos econômicos urbanos - e.g. São Paulo - e nos maiores polos florestais - e.g. Floresta Amazônica - do Brasil. Essa atenção localizada traz um cenário de descaso político e acadêmico ao nordeste, sua população, suas riquezas e chagas. Porém, a natureza não negligencia - mais da metade da população afligida por desastres naturais provém da seca:
 
-![Afetados por disastres 1991-2012](./img/atlas_desastres.png)
+![Afetados por disastres 1991-2012](./reports/figures/atlas_desastres.png)
 > Vide [Atlas Brasileiro de Desastres Naturais](https://s2id.mi.gov.br/paginas/atlas/). Sistema Integrado de Informações sobre Desastres, 2013.
