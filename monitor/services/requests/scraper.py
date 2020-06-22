@@ -33,12 +33,11 @@ class Scraper:
                 is_report_in = are_keys_in(data, ['relatorio', 0, 'path'])
 
                 if is_shape_in and is_report_in and not os.path.exists(path):
-                    shape = self.session.get(
-                        f"{domains.monitor_de_secas}/{data['shape'][0]['path']}"
-                    )
-                    report = self.session.get(
-                        f"{domains.monitor_de_secas}/{data['relatorio'][0]['path']}"
-                    )
+                    shapepath = data['shape'][0]['path']
+                    reportpath = data['relatorio'][0]['path']
+
+                    shape = self.session.get(f"{domains.monitor_de_secas}/{shapepath}")
+                    report = self.session.get(f"{domains.monitor_de_secas}/{reportpath}")
 
                     with open(path / 'shape.zip', 'wb') as file:
                         file.write(shape.content)
@@ -46,6 +45,7 @@ class Scraper:
                         file.write(report.content)
 
                     FileHandler.unzip(path / 'shape.zip', path)
+
             if page < n_pages:
                 r = self.request_monitor(include, order_by, page=page+1)
 
