@@ -1,7 +1,5 @@
 <p align="center">
-    <a href="#">
-        <img style="cursor: default;" src="./logo/logo.svg" height="400px">
-    <a/>
+    <img style="cursor: default;" src="./logo/logo.svg" height="400px" alt="Logo do Monitor Social de Secas" />
 </p>
 
 --------
