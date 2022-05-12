@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="cursor: default;" src="./logo/logo.svg" height="400px" alt="Cabreira's logo" />
+    <img style="cursor: default;" src="./logo/logo.svg" height="200px" alt="Cabreira's logo" />
 </p>
 
 --------
