@@ -1,6 +1,6 @@
 import os
 
-from monitor.object_operations import are_keys_in
+from monitor.abstractions import are_keys_in
 from monitor.services.requests.session import SafeSession
 from monitor.services.files.file_handler import FileHandler
 from monitor.config import EXTERNAL_DATA_DIR, apis, domains
