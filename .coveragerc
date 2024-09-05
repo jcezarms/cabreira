@@ -1,2 +1,10 @@
 [run]
 include = monitor/*
+branch = True
+
+[report]
+omit =
+    */tests/*
+
+[html]
+directory = coverage_html_report
