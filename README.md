@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="cursor: default;" src="./logo/logo.svg" height="200px" alt="Logo da Cabreira" />
+    <img style="cursor: default;" src="./assets/logo/logo.svg" height="200px" alt="Logo da Cabreira" />
 </p>
 
 --------
@@ -18,5 +18,5 @@ Cabreira é uma ferramenta que expõe o real impacto da estiagem nordestina, num
 
 Já existe um grande foco nos aspectos naturais e sociais dos maiores polos econômicos urbanos - e.g. São Paulo - e florestais - e.g. Floresta Amazônica - do Brasil. Essa atenção localizada contribui com um cenário de descaso político e acadêmico ao nordeste, sua população, suas riquezas e chagas. Porém, a natureza não negligencia - mais da metade da população afligida por desastres naturais provém da seca:
 
-![Afetados por disastres 1991-2012](./reports/figures/atlas_desastres.png)
+![Afetados por disastres 1991-2012](./assets/reports/figures/atlas_desastres.png)
 > Vide [Atlas Brasileiro de Desastres Naturais](https://s2id.mi.gov.br/paginas/atlas/). Sistema Integrado de Informações sobre Desastres, 2013.

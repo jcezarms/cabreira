@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="cursor: default;" src="./logo/logo.svg" height="200px" alt="Cabreira's logo" />
+    <img style="cursor: default;" src="./assets/logo/logo.svg" height="200px" alt="Cabreira's logo" />
 </p>
 
 --------
@@ -19,7 +19,7 @@ Cabreira (*Brazilian Portuguese pronunciation:* [[kabɾˈejɾa]](https://en.wiki
 
 There's already a heavy focus on natural and social issues driven towards major brazilian cities - e.g. São Paulo - and forests - e.g. Amazon rainforest. This specialized treatment favors a scenario of political and academic neglect for the northeast, as for its people, wealth and problems. Nature, on the other hand, does not neglect - over half of the disaster-related impacts in Brazil come from droughts:
 
-![Affected by natural disasters 1991-2012](./reports/figures/atlas_desastres.png)
+![Affected by natural disasters 1991-2012](./assets/reports/figures/atlas_desastres.png)
 > Source: [Atlas Brasileiro de Desastres Naturais](https://s2id.mi.gov.br/paginas/atlas/). Sistema Integrado de Informações sobre Desastres, 2013.
 
 ## Why the name?
