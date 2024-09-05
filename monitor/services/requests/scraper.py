@@ -1,15 +1,15 @@
 import os
 
 from monitor.abstractions import are_keys_in
-from monitor.services.requests.session import SafeSession
-from monitor.services.files.file_handler import FileHandler
 from monitor.config import EXTERNAL_DATA_DIR, apis, domains
+from monitor.services.files.file_handler import FileHandler
+from monitor.services.requests.session import SafeSession
 
 
 class Scraper:
 
-    include = ['area', 'descricao', 'relatorio', 'shape']
-    order_by = ['id', 'asc']
+    include = ["area", "descricao", "relatorio", "shape"]
+    order_by = ["id", "asc"]
 
     def __init__(self):
         self.session = SafeSession()
@@ -23,37 +23,41 @@ class Scraper:
         """
         r = self.request_monitor(include, order_by, page=1)
 
-        n_pages = r['meta']['request']['query_params']['paginator']['limit']
+        n_pages = r["meta"]["request"]["query_params"]["paginator"]["limit"]
 
         for page in range(1, n_pages + 1):
-            for data in r['data']['list']:
-                path = EXTERNAL_DATA_DIR / f"monitor-de-secas/{data['mes']}-{data['ano']}"
+            for data in r["data"]["list"]:
+                path = (
+                    EXTERNAL_DATA_DIR / f"monitor-de-secas/{data['mes']}-{data['ano']}"
+                )
 
-                is_shape_in = are_keys_in(data, ['shape', 0, 'path'])
-                is_report_in = are_keys_in(data, ['relatorio', 0, 'path'])
+                is_shape_in = are_keys_in(data, ["shape", 0, "path"])
+                is_report_in = are_keys_in(data, ["relatorio", 0, "path"])
 
                 if is_shape_in and is_report_in and not os.path.exists(path):
-                    shapepath = data['shape'][0]['path']
-                    reportpath = data['relatorio'][0]['path']
+                    shapepath = data["shape"][0]["path"]
+                    reportpath = data["relatorio"][0]["path"]
 
                     shape = self.session.get(f"{domains.monitor_de_secas}/{shapepath}")
-                    report = self.session.get(f"{domains.monitor_de_secas}/{reportpath}")
+                    report = self.session.get(
+                        f"{domains.monitor_de_secas}/{reportpath}"
+                    )
 
-                    with open(path / 'shape.zip', 'wb') as file:
+                    with open(path / "shape.zip", "wb") as file:
                         file.write(shape.content)
-                    with open(path / 'report.pdf', 'wb') as file:
+                    with open(path / "report.pdf", "wb") as file:
                         file.write(report.content)
 
-                    FileHandler.unzip(path / 'shape.zip', path)
+                    FileHandler.unzip(path / "shape.zip", path)
 
             if page < n_pages:
-                r = self.request_monitor(include, order_by, page=page+1)
+                r = self.request_monitor(include, order_by, page=page + 1)
 
     def request_monitor(self, include=include, order_by=order_by, page=1):
         params = {
-            'page': page,
-            'with': ','.join(include),
-            'orderBy': ','.join(order_by)
+            "page": page,
+            "with": ",".join(include),
+            "orderBy": ",".join(order_by),
         }
 
         return self.session.get(apis.monitor_de_secas, params=params).json()
