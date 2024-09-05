@@ -14,7 +14,7 @@
 | --- | --- |
 
 ## Motivação
-Cabreira é uma ferramenta que expõe o real impacto da estiagem nordestina, numa interface simples e acessível. Para isso, foi criado um indicador único de vulnerabilidade climática que agrega diversos dados sociais a métricas de intensidade do [Monitor de Secas](http://monitordesecas.ana.gov.br/mapa).
+Cabreira é uma ferramenta que expõe o real impacto da estiagem nordestina, numa interface simples e acessível. Para isso, foi criado um indicador único de vulnerabilidade climática que agrega diversos dados sociais a métricas de intensidade do [Monitor de Secas](http://monitordesecas.ana.gov.br/mapa) (MdS).
 
 Já existe um grande foco nos aspectos naturais e sociais dos maiores polos econômicos urbanos - e.g. São Paulo - e florestais - e.g. Floresta Amazônica - do Brasil. Essa atenção localizada contribui com um cenário de descaso político e acadêmico ao nordeste, sua população, suas riquezas e chagas. Porém, a natureza não negligencia - mais da metade da população afligida por desastres naturais provém da seca:
 
