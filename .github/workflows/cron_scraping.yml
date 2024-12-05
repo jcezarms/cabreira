@@ -1,0 +1,50 @@
+name: Daily Scraper
+
+on:
+  schedule:
+    # Run every day 5:00 AM UTC-3
+    - cron: '0 8 * * *' 
+    
+jobs:
+  scrape-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Git commit setup
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      # Python setup
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      # Dependency installation
+      - name: Install dependencies with Poetry
+        run: |
+          pip install poetry  # Install Poetry
+          poetry install       # Install dependencies and create virtual environment
+          poetry run python --version  # Ensure Poetry is managing the Python version
+
+      # Run scraping routine
+      - name: Run Python script
+        run: |
+          poetry run python scripts/scrape_monitor_de_secas.py
+
+      # Optionally commit data changes, if any
+      - name: Check for changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --exit-code || git commit -m "Daily update: scrape results"
+
+      # Push changes to remote
+      - name: Push changes
+        uses: ad-m/github-push-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
